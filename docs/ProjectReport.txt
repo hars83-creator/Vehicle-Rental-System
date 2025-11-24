@@ -1,0 +1,199 @@
+____________________________________________________________
+PROJECT REPORT
+------------------------------------------------------------
+Course Code: CSEG1032
+Course Title: Programming in C
+Project Title: VEHICLE RENTAL SYSTEM
+Student Names: Harsh Raj 
+Sap Id : 590025597
+Semester: 1st sem (2025)
+
+______________________________________________________________________________________________________________________
+ABSTRACT
+-----------------------------------------------------------------------------------------------------------------------
+
+The Vehicle Rental System is a console based program written in C that makes renting bike, scooty , car  easier.
+
+The system stores data like customer name, licence ID, vehicle type, and rental duration and calculating rental costs.
+
+File management, arrays, structures, functions are all used in this project.
+
+By verifying inputs and storing data in a binary file (vehRent.dat)  With the addition of features like payment mode integration, 
+ billing history,bike availability , DL check  and authentication, 
+ this application can be expanded into a real-world rental system.
+_________________________________________________________________________________________________________________________
+2. OBJECTIVE
+---------------------------------------------------------------------------------------------------------------------------
+The objective of this project  to create a simple and user-friendly Vehicle Rental System using
+many functions of C like 
+* using structure to read and store complex data 
+* using file management system for storing and reading and append Data .
+* using modular design for better code organization
+
+
+___________________________________________________________________________________________________________________
+3.promlem defination
+---------------------------------------------------------------------------------------------------------------------
+
+In many small vehicle rental , records are maintained manually which has many difficulty like : 
+       * Human errors
+       * Missing entries
+       * Problem in finding history
+       * Cost calculation
+       * No data storage in digital format
+
+Therefore, there is a need for a simple, digital rental management system that:
+✔   store customer details
+✔   Store rental data 
+✔   record of all rentals
+✔    Calculates  rental cost
+
+___________________________________________________________________________________________________________________
+4. Algorithm 
+---------------------------------------------------------------------------------------------------------------------
+
+ *********   Algorithm for Main *********
+
+  1. Start
+  2. Load data from file
+  3. Repeat until user select Exit:
+          a. Display menu options
+          b. Accept user choice
+
+     If choice = 1, call addRent()
+     If choice = 2, call viewAll()
+     If choice = 3, call saveFile()
+     If choice = 0, save file and exit loop
+4. end 
+___________________________________________________________________________________________________________________
+
+********** ALGORITHM FOR ADDING RENTAL ************** 
+
+1. Start
+2. If you select rental
+3. Input license ID
+4. Validate license ID 
+   if invalid , repeat step 3
+5. Input name
+6. Display list of vehicle 
+7. Input vehicle type
+8. If vehicle type is invalid
+      stop
+9. Input number of hours
+10. Calculate cost 
+ hours * vrates[vtype]
+11. Store rental record 
+12. Increase rental count
+13. show cost
+14. End
+___________________________________________________________________________________________________________________
+
+*************** ALGORITHM FOR RECORD PRINTING **************** .
+
+1. Start
+2. If record count is zero:
+    Display “No Records”
+     Stop
+3. Display header
+4. For each record :
+      Print ID, name, vehicle name, hours, and cost
+5. End
+
+__________________________________________________________________________________________________________________
+************* ALGORITHM FOR DATA STORAGE ************
+
+1. Start
+2. Open file “vehRent.dat” in binary write mode
+3. Write rental record array to file
+4. Close file
+5. End
+
+___________________________________________________________________________________________________________________
+
+************ Algorithm for Loading Data ****************** 
+1. Start
+2. Open file “vehRent.dat” in binary read mode
+3. If file exists:
+ Read entire file into rental array
+ Update record count
+4. Close file
+5. End
+
+___________________________________________________________________________________________________________________
+
+
+___________________________________________________________________________________________________________________
+5. CODE SNIPPETS
+---------------------------------------------------------------------------------------------------------------------
+
+************* Structure Definition **************
+
+struct rentalRec {
+    int rid;
+    char cname[60];
+    int vtype;
+    int hrs;
+    float cost;
+};
+___________________________________________________________________________________________________________________
+
+************** Vehicle Rate List using enum *****************
+
+float vrates[] = {0,50,40,20,70,100,175,200,250,125};
+
+___________________________________________________________________________________________________________________
+
+ *************** Rental Function snippets *******************
+
+void addRent()
+{
+    struct rentalRec r;
+
+    do {
+        printf("Enter license ID (5 digits): ");
+        scanf("%d", &r.rid);
+    } while (r.rid < 10000 || r.rid > 99999);
+
+    printf("Enter Customer Name: ");
+    scanf(" %59[^\n]", r.cname);
+
+    showVehicles();
+    printf("Choose vehicle: ");
+    scanf("%d", &r.vtype);
+
+    printf("Hours taken: ");
+    scanf("%d", &r.hrs);
+
+printf("Added. Total: Rs %.2f\n", r.cost);
+}
+___________________________________________________________________________________________________________________
+
+*****************  Saving File  *****************
+
+void saveFile()
+{
+    FILE *fp = fopen("vehRent.dat","wb");
+    fwrite(rentArr, sizeof(struct rentalRec),rcount, fp);
+    fclose(fp);
+}
+___________________________________________________________________________________________________________________
+
+
+
+
+
+___________________________________________________________________________________________________________________
+6. Conclusion & Future Work
+--------------------------------------------------------------------------------------------------------------------
+This project successfully implements a functional vehicle rental system using C programming.
+ It meets the objectives of storing customer data, calculating charges, displaying past rentals, and saving data from the rental file. 
+
+Future Enhancements : 
+
+* Admin login system
+* Discount and reward system
+* Mobile application 
+* Online booking 
+* invoice for booking  (PDF)
+* Extra charges for late , damage vehicle .
+
