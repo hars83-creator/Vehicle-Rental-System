@@ -9,6 +9,7 @@ enum vehicleType {
     V_MSZK, V_THAR, V_SCORP, V_BULLET
 };
 
+// structure for record 
 struct rentalRec {
     int rid;
     char cname[60];
