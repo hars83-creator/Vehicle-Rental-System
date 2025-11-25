@@ -89,7 +89,7 @@ void viewAll()
     return;
 }
 
-printf("\nID           | Customer                | Vehicle              | Hours   | Cost      |\n");
+printf("\nID           | Customer                | Vehicle              | Hours   | Cost      |\n");  // header for all record 
 printf("-------------------------------------------------------------------------------------\n");
 for (int i = 0; i < rcount; i++) {
     printf("%-12d | %-22s | %-20s | %-7d | ₹ %-8.2f |\n",    // for proper record mangement (deign for records).
