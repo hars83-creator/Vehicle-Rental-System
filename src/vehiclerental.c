@@ -116,12 +116,3 @@ void saveFile() {
     fclose(fp);
 }
 
-// function for loading file 
-
-void loadFile() {
-    FILE *fp = fopen("vehRent.dat","rb");
-    if(fp) {
-        rcount = fread(rentArr, sizeof(struct rentalRec), RENT_REC, fp);
-        fclose(fp);
-    }
-}
