@@ -54,13 +54,14 @@ modular layout
 **********************************************************
 
 each file has its own purpose and together they form the full program.
-
+____________________________________
 How to Compile & Run It
+____________________________________
 In  GCC, the program can be compiled with a single command:
 
-gcc main.c vehiclerental.c utils.c -o rental
+gcc -I include src/main.c src/utils.c src/vehiclerental.c -o main      
 
-Once it compiles , you can run it like (   ./rental  ).
+Once it compiles , you can run it like (   ./main  ).
 
 **********************************************************
 *     ⭐   Directory structure     ⭐                     *
