@@ -8,7 +8,7 @@ int main() {
  // user interface 
     do {
         printf("\n*******************************\n");
-        printf("   --- RENTAL ROADIES --- ");
+        printf("   --- RENTAL ROADIES --- ");                       // name for the system 
         printf("\n*******************************\n");
 // menu for selection what you want 
         printf("1. Add Rental\n");
@@ -20,7 +20,8 @@ int main() {
         scanf("%d", &ch);
         
          clerscrn(); // for clear screen 
-         
+
+        // for selction via switch cases
         switch(ch) {
             case 1: addRent(); break;
             case 2: viewAll(); break;
