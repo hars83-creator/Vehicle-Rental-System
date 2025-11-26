@@ -4,7 +4,7 @@ PROJECT REPORT
 Course Code: CSEG1032
 Course Title: Programming in C
 Project Title: VEHICLE RENTAL SYSTEM
-Student Names: Harsh Raj 
+Student Name : Harsh Raj 
 Sap Id : 590025597
 Semester: 1st sem (2025)
 
