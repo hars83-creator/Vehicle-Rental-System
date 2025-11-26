@@ -1,7 +1,7 @@
 #ifndef VEHICLERENTAL_H
 #define VEHICLERENTAL_H
 
-#define RENT_REC 100
+#define RENT_REC 100      // rental record for 100 entries infuture increase 
 
 // enum for declaring veehicle a number that is  starting from 1 for easily calling ..
 enum vehicleType {
