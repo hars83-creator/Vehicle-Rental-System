@@ -1,32 +1,45 @@
 #ifndef VEHICLERENTAL_H
 #define VEHICLERENTAL_H
 
-#define RENT_REC 100      // rental record for 100 entries infuture increase 
+// Maximum number of rental records that can be stored in memory
+#define RENT_REC 100     // limit can be increased later if required
 
-// enum for declaring veehicle a number that is  starting from 1 for easily calling ..
-enum vehicleType {
-    V_BIKE=1, V_SCOOTY, V_CYCLE, V_EBIKE, V_MBIKE,
-    V_MSZK, V_THAR, V_SCORP, V_BULLET
+// Enum for vehicle type selection in menu
+// Starting from 1 makes menu handling easier
+enum vehicleType
+{
+    V_BIKE = 1,
+    V_SCOOTY,
+    V_CYCLE,
+    V_EBIKE,
+    V_MBIKE,
+    V_MSZK,
+    V_THAR,
+    V_SCORP,
+    V_BULLET
 };
 
-// structure for record 
-struct rentalRec {
-    int rid;
-    char cname[60];
-    int vtype;
-    int hrs;
-    float cost;
+// Structure to store a single rental record
+struct rentalRec
+{
+    int rid;             // license ID of customer
+    char cname[60];      // customer name
+    int vtype;           // selected vehicle type
+    int hrs;             // number of hours rented
+    float cost;          // total rental cost
 };
 
-extern struct rentalRec rentArr[RENT_REC];
-extern int rcount;
-extern float vrates[];
+// Global variables used in multiple files
+extern struct rentalRec rentArr[RENT_REC];   // array to store all rental records
+extern int rcount;                           // total number of records stored
+extern float vrates[];                      // hourly rates of vehicles
 
-void showVehicles();
-const char* vname(int t);
-void addRent();
-void viewAll();
-void saveFile();
-void loadFile();
+// Function declarations
+void showVehicles();        // displays vehicle list
+const char* vname(int t);  // returns vehicle name based on type
+void addRent();            // adds a new rental record
+void viewAll();            // displays all records
+void saveFile();           // saves records to file
+void loadFile();           // loads records from file
 
 #endif
