@@ -2,36 +2,62 @@
 #include "vehiclerental.h"
 #include "utils.h"
 
-int main() {
-    int ch;
+int main()
+{
+    int choice;   // variable to store user menu choice
+
+    // Load previously saved rental data from file (if any)
     loadFile();
- // user interface 
-    do {
+
+    // Main program loop runs until user chooses Exit
+    do
+    {
+        // Showing project title on screen
         printf("\n*******************************\n");
-        printf("   --- RENTAL ROADIES --- ");                       // name for the system 
-        printf("\n*******************************\n");
-// menu for selection what you want 
+        printf("       --- RENTAL ROADIES ---\n");
+        printf("*******************************\n");
+
+        // Menu options
         printf("1. Add Rental\n");
         printf("2. View All\n");
         printf("3. Save\n");
         printf("0. Exit\n");
-        printf(" Choice: ");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-        scanf("%d", &ch);
-        
-         clerscrn(); // for clear screen 
+        // Clearing screen for best user interface
+        clerscrn();
 
-        // for selction via switch cases
-        switch(ch) {
-            case 1: addRent(); break;
-            case 2: viewAll(); break;
-            case 3: saveFile(); break;
-            case 0: saveFile(); printf("HAPPY JOURNEY\n BYE! \n"); break;
-            default: printf("Wrong choice.\n");
+        // menu choice
+        if (choice == 1)
+        {
+            // Add a new rental record
+            addRent();
+        }
+        else if (choice == 2)
+        {
+            // Display all stored rental records
+            viewAll();
+        }
+        else if (choice == 3)
+        {
+            // Save current record into file
+            saveFile();
+            printf("\nRecords saved successfully.\n");
+        }
+        else if (choice == 0)
+        {
+            // Automatically save data before exiting
+            saveFile();
+            printf("\nHAPPY JOURNEY\nBYE!\n");
+        }
+        else
+        {
+            // If user enters invalid choice then
+            printf("\nWrong choice. Please select again.\n");
         }
 
+    } while (choice != 0);   // Loop runs until Exit option is selected
 
-    } while(ch != 0);
-
-    return 0;
+    return 0;   // Program ends here
 }
