@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include "utils.h"
 
-// function for clearing terminal
-void clerscrn() {
-    system("clear");
+// This function clears the terminal screen
+// Used to keep the interface clean and readable
+void clerscrn()
+{
+system("clear");
 }
