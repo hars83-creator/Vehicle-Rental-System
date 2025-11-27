@@ -112,10 +112,10 @@ ________________________________________________________________________________
 
 ************ Algorithm for Loading Data ****************** 
 1. Start
-2. Open file “vehRent.dat” in binary read mode
+2. Open file “vehRent.dat” in read mode
 3. If file exists:
  Read entire file into rental array
- Update record count
+ increase record count 
 4. Close file
 5. End
 
