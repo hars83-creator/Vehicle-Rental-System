@@ -1,0 +1,62 @@
+1
+12345
+Amit Kumar
+3
+7
+
+1
+23456
+Neha Sharma
+8
+4
+
+1
+34567
+Rahul Verma
+1
+12
+
+1
+45678
+Pooja Singh
+6
+5
+
+1
+56789
+Rohit Mehta
+9
+9
+
+1
+67891
+Anjali Patel
+2
+3
+
+1
+78912
+Vikram Rao
+7
+14
+
+1
+89123
+Sneha Das
+4
+6
+
+1
+91234
+Karan Malhotra
+5
+10
+
+1
+99887
+Priya Gupta
+1
+4
+
+2
+0
