@@ -28,36 +28,35 @@ int main()
         // Clearing screen for best user interface
         clerscrn();
 
-        // menu choice
-        if (choice == 1)
-        {
-            // Add a new rental record
-            addRent();
-        }
-        else if (choice == 2)
-        {
-            // Display all stored rental records
-            viewAll();
-        }
-        else if (choice == 3)
-        {
-            // Save current record into file
-            saveFile();
-            printf("\nRecords saved successfully.\n");
-        }
-        else if (choice == 0)
-        {
-            // Automatically save data before exiting
-            saveFile();
-            printf("\nHAPPY JOURNEY\nBYE!\n");
-        }
-        else
-        {
-            // If user enters invalid choice then
-            printf("\nWrong choice. Please select again.\n");
-        }
+       while (1) {
+    printf("\n1. Add Rental\n");
+    printf("2. View All\n");
+    printf("3. Save\n");
+    printf("0. Exit\n");
+    printf("Enter choice: ");
 
-    } while (choice != 1);   // Loop runs until Exit option is selected
+    if (scanf("%d", &choice) != 1) {
+        printf("\nInput finished. Auto exit.\n");
+        break;
+    }
+
+    switch (choice) {
+        case 1:
+            addRental();
+            break;
+        case 2:
+            viewAll();
+            break;
+        case 3:
+            saveData();
+            break;
+        case 0:
+            printf("Exiting...\n");
+            return 0;
+        default:
+            printf("Invalid choice\n");
+    }
+}
 
     return 0;   // Program ends here
 }
