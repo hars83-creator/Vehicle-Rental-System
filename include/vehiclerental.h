@@ -2,7 +2,7 @@
 #define VEHICLERENTAL_H
 
 // Maximum number of rental records that can be stored in memory
-#define RENT_REC 100     // limit can be increased later if required
+#define RENT_REC 5000    // limit can be increased later if required
 
 // Enum for vehicle type selection in menu
 // Starting from 1 makes menu handling easier
