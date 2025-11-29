@@ -66,14 +66,11 @@ Once it compiles , you can run it like (./main < sample_input.txt).
 **********************************************************
 *     ⭐   Directory structure     ⭐                     *
 **********************************************************
-ProjectFolder
-⚡️├── main.c             -> main source file 
-⚡️├── data/             ->  folder for storing all generated files
-⚡️│     ├── accounts.dat
-⚡️│     └── transactions.dat
-│
-⚡️└── README.md            -> about project and how to use it
-
+|-- src/ (all .c files)
+|-- include/ (all .h files)
+|-- docs/ (project report.pdf , projectreport.txt)
+|-- README.md (project description and instructions)
+| sample_input.txt (test inputs)
 
 **********************************************************
 *     ⭐ Concepts demonstrated   ⭐
