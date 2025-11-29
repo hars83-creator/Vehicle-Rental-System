@@ -31,7 +31,7 @@ int main() {
                 break;
 
             case 3:
-                saveFIle();    /* Save data to file */
+                saveFile();    /* Save data to file */
                 break;
 
             case 0:
