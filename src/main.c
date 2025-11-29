@@ -9,6 +9,9 @@ int main()
     // Load previously saved rental data from file (if any)
     loadFile();
 
+    // Clearing screen for  good user interface.,
+        clerscrn();
+
     // Main program loop runs until user chooses Exit
     do
     {
@@ -25,9 +28,6 @@ int main()
 
              printf("Enter your choice: ");
         scanf("%d", &choice);
-
-        // Clearing screen for best user interface
-        clerscrn();
 
         // menu choice
         if (choice == 1)
