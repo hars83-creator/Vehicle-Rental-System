@@ -152,7 +152,7 @@ void loadFile()
 {
     FILE *fp = fopen("vehRent.dat", "rb");
 
-    if (fp != NULL)
+    if (fp != NULL)      // if any error in opening by function fopen it return null ... 
     {
         // Reading all records from file into array
         rcount = fread(rentArr, sizeof(struct rentalRec), RENT_REC, fp);
