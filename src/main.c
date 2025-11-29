@@ -54,11 +54,11 @@ int main()
         }
         else
         {
-            // If user enters invalid choice then
+            // If user enters invalid choice then print this 
             printf("\nWrong choice. Please select again.\n");
         }
 
          } while (choice != 0);   // Loop runs until Exit option is selected
-         
+
           return 0;   // Program ends here
 }
