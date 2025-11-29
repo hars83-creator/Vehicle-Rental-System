@@ -57,7 +57,7 @@ int main()
             printf("\nWrong choice. Please select again.\n");
         }
 
-    } while (choice != 0);   // Loop runs until Exit option is selected
+    } while (choice != 1);   // Loop runs until Exit option is selected
 
     return 0;   // Program ends here
 }
