@@ -1,62 +1,53 @@
 #include <stdio.h>
 #include "vehiclerental.h"
-#include "utils.h"
 
-int main()
-{
-    int choice;   // variable to store user menu choice
-
-    // Load previously saved rental data from file (if any)
-    loadFile();
-
-    // Main program loop runs until user chooses Exit
-    do
-    {
-        // Showing project title on screen
+int main() {
+    int choice;
+ // Showing project title on screen
         printf("\n*******************************\n");
         printf("       --- RENTAL ROADIES ---\n");
         printf("*******************************\n");
-
-        // Menu options
-        printf("1. Add Rental\n");
+   
+    while (1) {
+        printf("\n1. Add Rental\n");
         printf("2. View All\n");
         printf("3. Save\n");
         printf("0. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+        printf("Enter choice: ");
 
-        // Clearing screen for best user interface
-        clerscrn();
+        /* EOF safe input for keyboard and sample_input.txt */
+        if (scanf("%d", &choice) != 1) {
+            printf("\nNo more input. Exiting safely...\n");
+            break;
+        }
 
-       while (1) {
-    printf("\n1. Add Rental\n");
-    printf("2. View All\n");
-    printf("3. Save\n");
-    printf("0. Exit\n");
-    printf("Enter choice: ");
+        switch (choice) {
+            case 1:
+                addRent();     /* Add rental */
+                break;
 
-    if (scanf("%d", &choice) != 1) {
-        printf("\nInput finished. Auto exit.\n");
-        break;
+            case 2:
+                viewAll();     /* View all rentals */
+                break;
+
+            case 3:
+                saveData();    /* Save data to file */
+                break;
+
+            case 0:
+                printf("Exiting program...\n");
+                return 0;
+
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
     }
 
-    switch (choice) {
-        case 1:
-            addRental();
-            break;
-        case 2:
-            viewAll();
-            break;
-        case 3:
-            saveData();
-            break;
-        case 0:
-            printf("Exiting...\n");
-            return 0;
-        default:
-            printf("Invalid choice\n");
-    }
+    return 0;
 }
 
-    return 0;   // Program ends here
-}
+
+
+
+
+       
