@@ -59,9 +59,9 @@ How to Compile & Run It
 ____________________________________
 In  GCC, the program can be compiled with a single command:
 
-gcc -I include src/main.c src/utils.c src/vehiclerental.c -o main      
+gcc -I include src/main.c src/utils.c src/vehiclerental.c -o main
 
-Once it compiles , you can run it like (   ./main  ).
+Once it compiles , you can run it like (./main < sample_input.txt).
 
 **********************************************************
 *     ⭐   Directory structure     ⭐                     *
