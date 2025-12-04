@@ -1,45 +1,45 @@
-#ifndef VEHICLERENTAL_H
-#define VEHICLERENTAL_H
+#ifndef RENTAL_H
+#define RENTAL_H
 
-// Maximum number of rental records that can be stored in memory
-#define RENT_REC 5000    // limit can be increased later if required
+#include <time.h>
 
-// Enum for vehicle type selection in menu
-// Starting from 1 makes menu handling easier
-enum vehicleType
-{
-    V_BIKE = 1,
-    V_SCOOTY,
-    V_CYCLE,
-    V_EBIKE,
-    V_MBIKE,
-    V_MSZK,
-    V_THAR,
-    V_SCORP,
-    V_BULLET
+#define RENT_REC 1000
+#define ADMIN_PASS "1234"
+
+/* ---------- VEHICLE ENUM ---------- */
+enum vehicleType {
+    V_BIKE = 1, V_SCOOTY, V_CYCLE, V_EBIKE, V_MBIKE,
+    V_MSZK, V_THAR, V_SCORP, V_BULLET
 };
 
-// Structure to store a single rental record
-struct rentalRec
-{
-    int rid;             // license ID of customer
-    char cname[60];      // customer name
-    int vtype;           // selected vehicle type
-    int hrs;             // number of hours rented
-    float cost;          // total rental cost
+/* ---------- RENTAL STRUCT ---------- */
+struct rentalRec {
+    int rid;
+    char cname[60];
+    int vtype;
+    int hrs;
+    float cost;
+    char date[20];
+    char time[20];
 };
 
-// Global variables used in multiple files
-extern struct rentalRec rentArr[RENT_REC];   // array to store all rental records
-extern int rcount;                           // total number of records stored
-extern float vrates[];                      // hourly rates of vehicles
+/* ---------- GLOBAL DATA ---------- */
+extern struct rentalRec rentArr[RENT_REC];
+extern int rcount;
+extern float vrates[10];
 
-// Function declarations
-void showVehicles();        // displays vehicle list
-const char* vname(int t);  // returns vehicle name based on type
-void addRent();            // adds a new rental record
-void viewAll();            // displays all records
-void saveFile();           // saves records to file
-void loadFile();           // loads records from file
+/* ---------- FUNCTION PROTOTYPES ---------- */
+void showVehicles();
+const char* vname(int);
+int login();
+void addRent();
+void viewAll();
+void searchRec();
+void deleteRec();
+void updateRec();
+void printBill();
+void dailyReport();
+void saveFile();
+void loadFile();
 
 #endif
