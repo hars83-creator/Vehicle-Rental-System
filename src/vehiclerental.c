@@ -88,12 +88,14 @@ void addRent()
 /* ---------- VIEW ALL ---------- */
 void viewAll()
 {
+    printf("\nID           Name              Vehicle             Hrs     Cost         Date           Time\n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
     for(int i = 0; i < rcount; i++) {
-        printf("%d %s %s ₹%.2f\n",
-            rentArr[i].rid,
-            rentArr[i].cname,
+        printf("%-10d |%-18s |%-17s |%-7d ₹%-9.2f |%-15s |%-15s|\n",
+            rentArr[i].rid, rentArr[i].cname,
             vname(rentArr[i].vtype),
-            rentArr[i].cost);
+            rentArr[i].hrs, rentArr[i].cost,
+            rentArr[i].date, rentArr[i].time);
     }
 }
 
