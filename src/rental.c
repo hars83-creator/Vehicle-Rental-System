@@ -68,6 +68,7 @@ void addRent()
     scanf(" %59[^\n]", r.cname);
 
     showVehicles();
+    printf("enter hours :");
     scanf("%d", &r.vtype);
     printf("Enter Hours: ");
     scanf("%d", &r.hrs);
